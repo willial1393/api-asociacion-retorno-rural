@@ -13,21 +13,19 @@
 
 
 -- Volcando estructura de base de datos para landing-projects
-DROP DATABASE IF EXISTS `landing-projects`;
 CREATE DATABASE IF NOT EXISTS `landing-projects` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `landing-projects`;
 
 -- Volcando estructura para tabla landing-projects.items
-DROP TABLE IF EXISTS `items`;
 CREATE TABLE IF NOT EXISTS `items`
 (
     `id`         int(10) unsigned                                              NOT NULL AUTO_INCREMENT,
     `name`       varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL,
     `url`        varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `proyect_id` int(10) unsigned                                              NOT NULL,
+    `project_id` int(10) unsigned                                              NOT NULL,
     PRIMARY KEY (`id`),
-    KEY `FK_items_projects` (`proyect_id`),
-    CONSTRAINT `FK_items_projects` FOREIGN KEY (`proyect_id`) REFERENCES `projects` (`id`)
+    KEY `FK_items_projects` (`project_id`),
+    CONSTRAINT `FK_items_projects` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 6
   DEFAULT CHARSET = utf8mb4
@@ -36,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `items`
 -- Volcando datos para la tabla landing-projects.items: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `items`
     DISABLE KEYS */;
-INSERT INTO `items` (`id`, `name`, `url`, `proyect_id`)
+INSERT INTO `items` (`id`, `name`, `url`, `project_id`)
 VALUES (1, 'GitHub', 'github.co1m', 1),
        (2, 'GitHub', 'github.com', 1),
        (3, 'GitHub', 'github.com', 1),
@@ -45,14 +43,16 @@ VALUES (1, 'GitHub', 'github.co1m', 1),
     ENABLE KEYS */;
 
 -- Volcando estructura para tabla landing-projects.modules
-DROP TABLE IF EXISTS `modules`;
 CREATE TABLE IF NOT EXISTS `modules`
 (
-    `id`       int(10) unsigned                                             NOT NULL AUTO_INCREMENT,
-    `name`     varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `state_id` int(10) unsigned                                             NOT NULL,
+    `id`         int(10) unsigned                                             NOT NULL AUTO_INCREMENT,
+    `name`       varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `state_id`   int(10) unsigned                                             NOT NULL,
+    `project_id` int(10) unsigned                                             NOT NULL,
     PRIMARY KEY (`id`),
     KEY `FK_moduls_states` (`state_id`),
+    KEY `FK_modules_projects` (`project_id`),
+    CONSTRAINT `FK_modules_projects` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`),
     CONSTRAINT `FK_moduls_states` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 10
@@ -62,20 +62,19 @@ CREATE TABLE IF NOT EXISTS `modules`
 -- Volcando datos para la tabla landing-projects.modules: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `modules`
     DISABLE KEYS */;
-INSERT INTO `modules` (`id`, `name`, `state_id`)
-VALUES (1, 'modulo 1', 1),
-       (2, 'modulo 1', 1),
-       (3, 'modulo 1', 1),
-       (4, 'modulo 1', 1),
-       (5, 'modulo 1', 1),
-       (6, 'modulo 1', 1),
-       (7, 'modulo 1', 1),
-       (8, 'modulo 1', 1);
+INSERT INTO `modules` (`id`, `name`, `state_id`, `project_id`)
+VALUES (1, 'modulo 1', 1, 1),
+       (2, 'modulo 1', 1, 1),
+       (3, 'modulo 1', 1, 1),
+       (4, 'modulo 1', 1, 1),
+       (5, 'modulo 1', 1, 1),
+       (6, 'modulo 1', 1, 1),
+       (7, 'modulo 1', 1, 1),
+       (8, 'modulo 1', 1, 1);
 /*!40000 ALTER TABLE `modules`
     ENABLE KEYS */;
 
 -- Volcando estructura para tabla landing-projects.projects
-DROP TABLE IF EXISTS `projects`;
 CREATE TABLE IF NOT EXISTS `projects`
 (
     `id`          int(10) unsigned                                             NOT NULL AUTO_INCREMENT,
@@ -101,7 +100,6 @@ VALUES (1, 'SILUB', 'Sistema de información', 'imagen', 'Sistema de informació
     ENABLE KEYS */;
 
 -- Volcando estructura para tabla landing-projects.states
-DROP TABLE IF EXISTS `states`;
 CREATE TABLE IF NOT EXISTS `states`
 (
     `id`          int(10) unsigned                                             NOT NULL AUTO_INCREMENT,

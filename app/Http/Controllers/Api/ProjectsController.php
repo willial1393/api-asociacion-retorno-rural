@@ -12,7 +12,10 @@ class ProjectsController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->mensaje = Project::all();
+            $res->mensaje = Project::with('state')
+                ->with('item')
+                ->with('module')
+                ->get();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';

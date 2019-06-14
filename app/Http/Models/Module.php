@@ -14,4 +14,9 @@ class Module extends Model
     protected $table = 'modules';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
 }

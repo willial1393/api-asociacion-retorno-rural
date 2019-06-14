@@ -14,4 +14,20 @@ class Project extends Model
     protected $table = 'projects';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function item()
+    {
+        return $this->hasMany(Item::class, 'project_id', 'id');
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
+    public function module()
+    {
+        return $this->hasMany(Module::class, 'project_id', 'id')
+            ->with('state');
+    }
 }
