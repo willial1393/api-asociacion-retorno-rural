@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Models\Item;
+use App\Http\Models\Project;
 use Illuminate\Http\Request;
 
-class ItemsController extends Controller
+class ProjectsController extends Controller
 {
     public function get()
     {
         $res = new CustomResponse();
         try {
-            $res->mensaje = Item::all();
+            $res->mensaje = Project::all();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';
@@ -26,16 +26,16 @@ class ItemsController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $item = Item::find($request->id);
+            $item = Project::find($request->id);
             if (!$item) {
-                $item = Item::create($request->all());
+                $item = Project::create($request->all());
                 $res->status = 'Created';
             } else {
                 $item->fill($request->all());
                 $item->save();
                 $res->status = 'Updated';
             }
-            $res->mensaje = Item::find($item->id);
+            $res->mensaje = Project::find($item->id);
         } catch (\Exception $e) {
             $res->status = 'Error';
             $res->result = false;
@@ -48,7 +48,7 @@ class ItemsController extends Controller
     {
         $res = new CustomResponse();
         try {
-            Item::destroy($request->id);
+            Project::destroy($request->id);
             $res->status = 'Deleted';
         } catch (\Exception $e) {
             $res->status = 'Error';
