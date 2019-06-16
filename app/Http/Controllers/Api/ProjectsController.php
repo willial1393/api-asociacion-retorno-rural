@@ -12,7 +12,7 @@ class ProjectsController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->mensaje = Project::with('state')
+            $res->response = Project::with('state')
                 ->with('item')
                 ->with('module')
                 ->get();
@@ -38,7 +38,7 @@ class ProjectsController extends Controller
                 $item->save();
                 $res->status = 'Updated';
             }
-            $res->mensaje = Project::find($item->id);
+            $res->response = Project::find($item->id);
         } catch (\Exception $e) {
             $res->status = 'Error';
             $res->result = false;

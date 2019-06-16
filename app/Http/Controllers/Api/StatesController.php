@@ -12,7 +12,7 @@ class StatesController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->mensaje = State::all();
+            $res->response = State::all();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';
@@ -35,7 +35,7 @@ class StatesController extends Controller
                 $item->save();
                 $res->status = 'Updated';
             }
-            $res->mensaje = State::find($item->id);
+            $res->response = State::find($item->id);
         } catch (\Exception $e) {
             $res->status = 'Error';
             $res->result = false;

@@ -17,7 +17,7 @@ class ApiToken
     public function handle($request, Closure $next)
     {
         try {
-            if ($request->headers->all()['key'][0] != env('APP_KEY')) {
+            if ($request->headers->all()['api-key'][0] != env('APP_KEY')) {
                 throw new \Exception();
             }
             return $next($request);

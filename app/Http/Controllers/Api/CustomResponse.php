@@ -7,7 +7,7 @@ class CustomResponse
 {
     public $result = true;
     public $status;
-    public $mensaje;
+    public $response;
     public $error;
 
     public function get()
@@ -15,7 +15,7 @@ class CustomResponse
         return collect([
             'result' => $this->result,
             'status' => $this->status,
-            'message' => $this->mensaje,
+            'response' => $this->response,
             'error' => $this->error
         ]);
     }

@@ -12,7 +12,7 @@ class ModulesController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->mensaje = Module::all();
+            $res->response = Module::all();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';
@@ -35,7 +35,7 @@ class ModulesController extends Controller
                 $item->save();
                 $res->status = 'Updated';
             }
-            $res->mensaje = Module::find($item->id);
+            $res->response = Module::find($item->id);
         } catch (\Exception $e) {
             $res->status = 'Error';
             $res->result = false;

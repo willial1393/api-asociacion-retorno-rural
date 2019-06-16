@@ -12,7 +12,7 @@ class ItemsController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->mensaje = Item::all();
+            $res->response = Item::all();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';
@@ -35,7 +35,7 @@ class ItemsController extends Controller
                 $item->save();
                 $res->status = 'Updated';
             }
-            $res->mensaje = Item::find($item->id);
+            $res->response = Item::find($item->id);
         } catch (\Exception $e) {
             $res->status = 'Error';
             $res->result = false;

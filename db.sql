@@ -13,14 +13,17 @@
 
 
 -- Volcando estructura de base de datos para landing-projects
+DROP DATABASE IF EXISTS `landing-projects`;
 CREATE DATABASE IF NOT EXISTS `landing-projects` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `landing-projects`;
 
 -- Volcando estructura para tabla landing-projects.items
+DROP TABLE IF EXISTS `items`;
 CREATE TABLE IF NOT EXISTS `items`
 (
     `id`         int(10) unsigned                                              NOT NULL AUTO_INCREMENT,
-    `name`       varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL,
+    `label`      varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL,
+    `icon`       varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci  NOT NULL,
     `url`        varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
     `project_id` int(10) unsigned                                              NOT NULL,
     PRIMARY KEY (`id`),
@@ -31,18 +34,19 @@ CREATE TABLE IF NOT EXISTS `items`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.items: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.items: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `items`
     DISABLE KEYS */;
-INSERT INTO `items` (`id`, `name`, `url`, `project_id`)
-VALUES (1, 'GitHub', 'github.co1m', 1),
-       (2, 'GitHub', 'github.com', 1),
-       (3, 'GitHub', 'github.com', 1),
-       (4, 'GitHub', 'github.com', 1);
+INSERT INTO `items` (`id`, `label`, `icon`, `url`, `project_id`)
+VALUES (1, 'Proyecto', 'pi pi-info', 'http://appsprod.tk/jovita/', 1),
+       (2, 'GitHub', 'pi pi-info', 'github.com', 1),
+       (3, 'GitHub', 'pi pi-info', 'github.com', 1),
+       (4, 'GitHub', 'pi pi-info', 'github.com', 1);
 /*!40000 ALTER TABLE `items`
     ENABLE KEYS */;
 
 -- Volcando estructura para tabla landing-projects.modules
+DROP TABLE IF EXISTS `modules`;
 CREATE TABLE IF NOT EXISTS `modules`
 (
     `id`         int(10) unsigned                                             NOT NULL AUTO_INCREMENT,
@@ -59,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `modules`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.modules: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.modules: ~8 rows (aproximadamente)
 /*!40000 ALTER TABLE `modules`
     DISABLE KEYS */;
 INSERT INTO `modules` (`id`, `name`, `state_id`, `project_id`)
@@ -75,12 +79,14 @@ VALUES (1, 'modulo 1', 1, 1),
     ENABLE KEYS */;
 
 -- Volcando estructura para tabla landing-projects.projects
+DROP TABLE IF EXISTS `projects`;
 CREATE TABLE IF NOT EXISTS `projects`
 (
     `id`          int(10) unsigned                                             NOT NULL AUTO_INCREMENT,
     `name`        varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
     `type`        varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-    `image`       varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `image`       text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci        NOT NULL,
+    `url`         text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci        NOT NULL,
     `description` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
     `state_id`    int(10) unsigned                                             NOT NULL,
     PRIMARY KEY (`id`),
@@ -91,15 +97,17 @@ CREATE TABLE IF NOT EXISTS `projects`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.projects: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.projects: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `projects`
     DISABLE KEYS */;
-INSERT INTO `projects` (`id`, `name`, `type`, `image`, `description`, `state_id`)
-VALUES (1, 'SILUB', 'Sistema de información', 'imagen', 'Sistema de información apra la famiempresa Jovita', 1);
+INSERT INTO `projects` (`id`, `name`, `type`, `image`, `url`, `description`, `state_id`)
+VALUES (1, 'SILUB', 'Sistema de información', 'assets/images/jovita.jpg', 'http://appsprod.tk/jovita/',
+        'Sistema de información para la famiempresa Jovita', 1);
 /*!40000 ALTER TABLE `projects`
     ENABLE KEYS */;
 
 -- Volcando estructura para tabla landing-projects.states
+DROP TABLE IF EXISTS `states`;
 CREATE TABLE IF NOT EXISTS `states`
 (
     `id`          int(10) unsigned                                             NOT NULL AUTO_INCREMENT,
@@ -111,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `states`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.states: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.states: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `states`
     DISABLE KEYS */;
 INSERT INTO `states` (`id`, `name`, `description`)
