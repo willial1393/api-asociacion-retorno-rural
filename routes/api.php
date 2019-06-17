@@ -47,6 +47,11 @@ Route::middleware(['api'])->group(function () {
             Route::post('/', 'UsersController@store');
             Route::post('/destroy', 'UsersController@destroy');
         });
+        Route::prefix('icons')->group(function () {
+            Route::get('/', 'IconsController@get');
+            Route::post('/', 'IconsController@store');
+            Route::post('/destroy', 'IconsController@destroy');
+        });
     });
 });
 
