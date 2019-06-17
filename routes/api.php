@@ -41,6 +41,12 @@ Route::middleware(['api'])->group(function () {
             Route::post('/', 'StatesController@store');
             Route::post('/destroy', 'StatesController@destroy');
         });
+        Route::prefix('users')->group(function () {
+            Route::get('/', 'UsersController@get');
+            Route::post('/login', 'UsersController@login');
+            Route::post('/', 'UsersController@store');
+            Route::post('/destroy', 'UsersController@destroy');
+        });
     });
 });
 
