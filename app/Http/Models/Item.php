@@ -14,4 +14,9 @@ class Item extends Model
     protected $table = 'items';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function icon()
+    {
+        return $this->belongsTo(Icon::class);
+    }
 }

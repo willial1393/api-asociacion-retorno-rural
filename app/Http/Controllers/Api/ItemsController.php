@@ -12,7 +12,7 @@ class ItemsController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->response = Item::all();
+            $res->response = Item::with('icon')->get();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';
