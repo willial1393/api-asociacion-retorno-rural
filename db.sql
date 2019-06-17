@@ -32,15 +32,141 @@ CREATE TABLE IF NOT EXISTS `icons`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.icons: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.icons: ~131 rows (aproximadamente)
 /*!40000 ALTER TABLE `icons`
     DISABLE KEYS */;
 INSERT INTO `icons` (`id`, `name`, `code`)
-VALUES (1, 'mobile', 'pi pi-mobile'),
-       (2, 'tablet', 'pi pi-tablet'),
-       (3, 'key', 'pi pi-key'),
-       (4, 'shopping-cart', 'pi pi-shopping-cart'),
-       (5, 'comments', 'pi pi-comments');
+VALUES (1, 'pi-mobile', 'pi pi-mobile'),
+       (2, 'pi-tablet', 'pi pi-tablet'),
+       (3, 'pi-key', 'pi pi-key'),
+       (4, 'pi-shopping-cart', 'pi pi-shopping-cart'),
+       (5, 'pi-comments', 'pi pi-comments'),
+       (6, 'pi-briefcase', 'pi pi-briefcase'),
+       (7, 'pi-bell', 'pi pi-bell'),
+       (8, 'pi-paperclip', 'pi pi-paperclip'),
+       (9, 'pi-share-alt', 'pi pi-share-alt'),
+       (10, 'pi-envelope', 'pi pi-envelope'),
+       (11, 'pi-volume-down', 'pi pi-volume-down'),
+       (12, 'pi-volume-up', 'pi pi-volume-up'),
+       (13, 'pi-volume-off', 'pi pi-volume-off'),
+       (14, 'pi-eject', 'pi pi-eject'),
+       (15, 'pi-money-bill', 'pi pi-money-bill'),
+       (16, 'pi-images', 'pi pi-images'),
+       (17, 'pi-image', 'pi pi-image'),
+       (18, 'pi-sign-in', 'pi pi-sign-in'),
+       (19, 'pi-sign-out', 'pi pi-sign-out'),
+       (20, 'pi-wifi', 'pi pi-wifi'),
+       (21, 'pi-sitemap', 'pi pi-sitemap'),
+       (22, 'pi-chart-bar', 'pi pi-chart-bar'),
+       (23, 'pi-camera', 'pi pi-camera'),
+       (24, 'pi-dollar', 'pi pi-dollar'),
+       (25, 'pi-lock-open', 'pi pi-lock-open'),
+       (26, 'pi-table', 'pi pi-table'),
+       (27, 'pi-map-marker', 'pi pi-map-marker'),
+       (28, 'pi-list', 'pi pi-list'),
+       (29, 'pi-eye-slash', 'pi pi-eye-slash'),
+       (30, 'pi-eye', 'pi pi-eye'),
+       (31, 'pi-folder-open', 'pi pi-folder-open'),
+       (32, 'pi-folder', 'pi pi-folder'),
+       (33, 'pi-video', 'pi pi-video'),
+       (34, 'pi-inbox', 'pi pi-inbox'),
+       (35, '\r\npi-lock', 'pi \r\npi-lock'),
+       (36, 'pi-unlock\r\n', 'pi pi-unlock\r\n'),
+       (37, 'pi-tags', 'pi pi-tags'),
+       (38, 'pi-tag', 'pi pi-tag'),
+       (39, 'pi-power-off', 'pi pi-power-off'),
+       (40, 'pi-save', 'pi pi-save'),
+       (41, 'pi-question-circle', 'pi pi-question-circle'),
+       (42, 'pi-question', 'pi pi-question'),
+       (43, 'pi-copy', 'pi pi-copy'),
+       (44, 'pi-file', 'pi pi-file'),
+       (45, 'pi-clone', 'pi pi-clone'),
+       (46, 'pi-calendar-times', 'pi pi-calendar-times'),
+       (47, 'pi-calendar-minus\r\n', 'pi pi-calendar-minus\r\n'),
+       (48, 'pi-calendar-plus', 'pi pi-calendar-plus'),
+       (49, 'pi-ellipsis-v', 'pi pi-ellipsis-v'),
+       (50, 'pi-ellipsis-h', 'pi pi-ellipsis-h'),
+       (51, 'pi-bookmark', 'pi pi-bookmark'),
+       (52, 'pi-globe', 'pi pi-globe'),
+       (53, 'pi-replay', 'pi pi-replay'),
+       (54, 'pi-filter', 'pi pi-filter'),
+       (55, 'pi-print', 'pi pi-print'),
+       (56, 'pi-align-right', 'pi pi-align-right'),
+       (57, 'pi-align-left', 'pi pi-align-left'),
+       (58, 'pi-align-center', 'pi pi-align-center'),
+       (59, 'pi-align-justify', 'pi pi-align-justify'),
+       (60, 'pi-cog', 'pi pi-cog'),
+       (61, 'pi-cloud-download\r\n', 'pi pi-cloud-download\r\n'),
+       (62, 'pi-cloud-upload', 'pi pi-cloud-upload'),
+       (63, 'pi-cloud', 'pi pi-cloud'),
+       (64, 'pi-pencil', 'pi pi-pencil'),
+       (65, 'pi-users', 'pi pi-users'),
+       (66, 'pi-clock', 'pi pi-clock'),
+       (67, 'pi-user-minus', 'pi pi-user-minus'),
+       (68, '\r\npi-user-plus', 'pi \r\npi-user-plus'),
+       (69, 'pi-trash', 'pi pi-trash'),
+       (70, 'pi-window-minimize', 'pi pi-window-minimize'),
+       (71, 'pi-window-maximize', 'pi pi-window-maximize'),
+       (72, 'pi-external-link', 'pi pi-external-link'),
+       (73, 'pi-refresh', 'pi pi-refresh'),
+       (74, 'pi-user', 'pi pi-user'),
+       (75, 'pi-exclamation-triangle', 'pi pi-exclamation-triangle'),
+       (76, 'pi-calendar', 'pi pi-calendar'),
+       (77, 'pi-chevron-circle-left', 'pi pi-chevron-circle-left'),
+       (78, 'pi-chevron-circle-down', 'pi pi-chevron-circle-down'),
+       (79, 'pi-chevron-circle-right', 'pi pi-chevron-circle-right'),
+       (80, 'pi-chevron-circle-up\r\n', 'pi pi-chevron-circle-up\r\n'),
+       (81, 'pi-angle-double-down', 'pi pi-angle-double-down'),
+       (82, 'pi-angle-double-left', 'pi pi-angle-double-left'),
+       (83, 'pi-angle-double-right', 'pi pi-angle-double-right'),
+       (84, 'pi-angle-double-up', 'pi pi-angle-double-up'),
+       (85, 'pi-angle-down', 'pi pi-angle-down'),
+       (86, 'pi-angle-left', 'pi pi-angle-left'),
+       (87, 'pi-angle-right', 'pi pi-angle-right'),
+       (88, 'pi-angle-up', 'pi pi-angle-up'),
+       (89, 'pi-upload', 'pi pi-upload'),
+       (90, 'pi-download', 'pi pi-download'),
+       (91, 'pi-ban', 'pi pi-ban'),
+       (92, 'pi-star-o', 'pi pi-star-o'),
+       (93, 'pi-star', 'pi pi-star'),
+       (94, 'pi-chevron-left', 'pi pi-chevron-left'),
+       (95, 'pi-chevron-right', 'pi pi-chevron-right'),
+       (96, 'pi-chevron-down', 'pi pi-chevron-down'),
+       (97, 'pi-chevron-up\r\n', 'pi pi-chevron-up\r\n'),
+       (98, 'pi-caret-left', 'pi pi-caret-left'),
+       (99, 'pi-caret-right', 'pi pi-caret-right'),
+       (100, 'pi-caret-down', 'pi pi-caret-down'),
+       (101, 'pi-caret-up', 'pi pi-caret-up'),
+       (102, 'pi-search', 'pi pi-search'),
+       (103, 'pi-check', 'pi pi-check'),
+       (104, 'pi-check-circle', 'pi pi-check-circle'),
+       (105, 'pi-times', 'pi pi-times'),
+       (106, 'pi-times-circle', 'pi pi-times-circle'),
+       (107, 'pi-plus', 'pi pi-plus'),
+       (108, 'pi-plus-circle', 'pi pi-plus-circle'),
+       (109, 'pi-minus', 'pi pi-minus'),
+       (110, 'pi-minus-circle', 'pi pi-minus-circle'),
+       (111, 'pi-circle-on', 'pi pi-circle-on'),
+       (112, 'pi-circle-off', 'pi pi-circle-off'),
+       (113, 'pi-sort-down', 'pi pi-sort-down'),
+       (114, 'pi-sort-up', 'pi pi-sort-up'),
+       (115, 'pi-sort', 'pi pi-sort'),
+       (116, 'pi-step-backward', 'pi pi-step-backward'),
+       (117, 'pi-step-forward', 'pi pi-step-forward'),
+       (118, 'pi-th-large', 'pi pi-th-large'),
+       (119, 'pi-arrow-down', 'pi pi-arrow-down'),
+       (120, 'pi-arrow-left', 'pi pi-arrow-left'),
+       (121, 'pi-arrow-right', 'pi pi-arrow-right'),
+       (122, 'pi-arrow-up', 'pi pi-arrow-up'),
+       (123, 'pi-bars', 'pi pi-bars'),
+       (124, 'pi-arrow-circle-down', 'pi pi-arrow-circle-down'),
+       (125, 'pi-arrow-circle-left', 'pi pi-arrow-circle-left'),
+       (126, 'pi-arrow-circle-right', 'pi pi-arrow-circle-right'),
+       (127, 'pi-arrow-circle-up', 'pi pi-arrow-circle-up'),
+       (128, 'pi-info', 'pi pi-info'),
+       (129, 'pi-info-circle', 'pi pi-info-circle'),
+       (130, 'pi-home', 'pi pi-home'),
+       (131, 'pi-spinner', 'pi pi-spinner');
 /*!40000 ALTER TABLE `icons`
     ENABLE KEYS */;
 
@@ -67,9 +193,10 @@ CREATE TABLE IF NOT EXISTS `items`
 /*!40000 ALTER TABLE `items`
     DISABLE KEYS */;
 INSERT INTO `items` (`id`, `label`, `icon_id`, `url`, `project_id`)
-VALUES (1, 'Proyecto', 3, 'http://appsprod.tk/jovita/', 1),
-       (2, 'GitHub', 1, 'https://github.com/willial1393/SILUB', 1),
-       (6, 'sdfgsdf', 1, 'sdfg', 1);
+VALUES (1, 'Proyecto', 128, 'http://appsprod.tk/jovita/', 1),
+       (2, 'GitHub', 128, 'https://github.com/willial1393/SILUB', 1),
+       (7, 'GitHub', 128, 'https://github.com/willial1393/jovita', 3),
+       (8, 'Proyecto', 128, 'http://appsprod.tk/jovita/', 3);
 /*!40000 ALTER TABLE `items`
     ENABLE KEYS */;
 
@@ -125,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `projects`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.projects: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.projects: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `projects`
     DISABLE KEYS */;
 INSERT INTO `projects` (`id`, `name`, `type`, `image`, `url`, `description`, `state_id`)
@@ -157,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `states`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.states: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.states: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `states`
     DISABLE KEYS */;
 INSERT INTO `states` (`id`, `name`, `description`)
@@ -181,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `users`
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla landing-projects.users: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla landing-projects.users: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `users`
     DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `username`, `password`)

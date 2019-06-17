@@ -12,7 +12,7 @@ class ModulesController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->response = Module::all();
+            $res->response = Module::with('state')->get();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';
