@@ -13,7 +13,7 @@ class UsersController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $res->response = DB::select('call login(?, ?)',
+            $res->response = DB::selectOne('call login(?, ?)',
                 [$request->username, $request->password]);
             $res->status = 'Login';
         } catch (\Exception $e) {
