@@ -17,7 +17,8 @@ class Project extends Model
 
     public function item()
     {
-        return $this->hasMany(Item::class, 'project_id', 'id');
+        return $this->hasMany(Item::class, 'project_id', 'id')
+            ->with('icon');
     }
 
     public function state()
