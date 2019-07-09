@@ -9,14 +9,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static find($id)
  * @method static create(array $all)
  */
-class Module extends Model
+class Product extends Model
 {
-    protected $table = 'modules';
+    protected $table = 'products';
     protected $guarded = [];
     public $timestamps = false;
-
-    public function state()
-    {
-        return $this->belongsTo(State::class);
-    }
 }

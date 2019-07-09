@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Models\State;
+use App\Http\Models\Product;
 use Illuminate\Http\Request;
 
-class StatesController extends Controller
+class ProductsController extends Controller
 {
     public function get()
     {
         $res = new CustomResponse();
         try {
-            $res->response = State::all();
+            $res->response = Product::all();
             $res->status = 'ShowAll';
         } catch (\Exception $e) {
             $res->status = 'Error';
@@ -26,16 +26,16 @@ class StatesController extends Controller
     {
         $res = new CustomResponse();
         try {
-            $item = State::find($request->id);
+            $item = Product::find($request->id);
             if (!$item) {
-                $item = State::create($request->all());
+                $item = Product::create($request->all());
                 $res->status = 'Created';
             } else {
                 $item->fill($request->all());
                 $item->save();
                 $res->status = 'Updated';
             }
-            $res->response = State::find($item->id);
+            $res->response = Product::find($item->id);
         } catch (\Exception $e) {
             $res->status = 'Error';
             $res->result = false;
@@ -48,7 +48,7 @@ class StatesController extends Controller
     {
         $res = new CustomResponse();
         try {
-            State::destroy($request->id);
+            Product::destroy($request->id);
             $res->status = 'Deleted';
         } catch (\Exception $e) {
             $res->status = 'Error';

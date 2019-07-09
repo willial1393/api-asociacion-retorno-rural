@@ -43,6 +43,7 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+        //ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
