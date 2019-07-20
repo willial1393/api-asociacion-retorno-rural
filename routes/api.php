@@ -32,6 +32,11 @@ Route::middleware(['api'])->group(function () {
             Route::post('/', 'ProductsController@store');
             Route::post('/destroy', 'ProductsController@destroy');
         });
+        Route::prefix('config')->group(function () {
+            Route::get('/', 'ConfigController@get');
+            Route::post('/', 'ConfigController@store');
+            Route::post('/destroy', 'ConfigController@destroy');
+        });
     });
 });
 
