@@ -31,10 +31,10 @@ CREATE TABLE IF NOT EXISTS `config` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table asorural.config: ~0 rows (approximately)
+-- Dumping data for table asorural.config: ~1 rows (approximately)
 /*!40000 ALTER TABLE `config` DISABLE KEYS */;
 INSERT IGNORE INTO `config` (`id`, `mision`, `vision`, `aboutText`, `aboutMessage`, `facebook`, `instagram`, `twitter`, `issuu`, `contact`) VALUES
-	(1, '"TODO TRABAJADOR LLEVA EL MEJOR CAPITAL DENTRO DE SI MISMO Y DEBE AUMENTARLO ARDIENTEMENTE Y APLICARLO SABAMENTE".', '"TODO TRABAJADOR LLEVA EL MEJOR CAPITAL DENTRO DE SI MISMO Y DEBE AUMENTARLO ARDIENTEMENTE Y APLICARLO SABAMENTE".', 'En la actualidad contamos con 16 asociadas, maquinaría y equipo de modistería necesarios para fabricar ropa de trabajo de excelente calidad. 12 años de experiencia en la confección de ropa de trabajo garantizan nuestros productos.', '"TODO TRABAJADOR LLEVA EL MEJOR CAPITAL DENTRO DE SI MISMO Y DEBE AUMENTARLO ARDIENTEMENTE Y APLICARLO SABAMENTE". P. ADOLFO KOLPING', 'https://www.facebook.com/Asociaci%C3%B3n-Retorno-Rural-2367605686808857/', 'https://www.instagram.com/asosiacionretornorural/?hl=es-la', 'https://twitter.com/RetornoRural', 'https://issuu.com/issuu/docs/issuu_digitaltoolkit/1?ff', 'Vereda Quebrada Grande');
+	(1, '"Misión".', '"Visión".', 'En la actualidad contamos con 16 asociadas, maquinaría y equipo de modistería necesarios para fabricar ropa de trabajo de excelente calidad.\n12 años de experiencia en la confección de ropa de trabajo garantizan nuestros productos.', '"TODO TRABAJADOR LLEVA EL MEJOR CAPITAL DENTRO DE SI MISMO Y DEBE AUMENTARLO ARDIENTEMENTE Y APLICARLO SABAMENTE". \nP. ADOLFO KOLPING', 'https://www.facebook.com/Asociaci%C3%B3n-Retorno-Rural-2367605686808857/', 'https://www.instagram.com/asosiacionretornorural/?hl=es-la', 'https://twitter.com/RetornoRural', 'https://issuu.com/issuu/docs/issuu_digitaltoolkit/1?ff', 'Vereda Quebrada Grande\nCelular: 310 7870286 - 310 7504196\nSanta Rosa de Viterbo - Boyacá');
 /*!40000 ALTER TABLE `config` ENABLE KEYS */;
 
 -- Dumping structure for table asorural.products
