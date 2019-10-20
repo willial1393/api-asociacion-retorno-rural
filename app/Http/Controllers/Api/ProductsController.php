@@ -29,10 +29,12 @@ class ProductsController extends Controller
         $res = new CustomResponse();
         try {
             $item = Product::find($request->id);
-            if (strpos($request->image, 'http') === false) {
+            if (strpos($request->image, 'https://asorural.s3.us-east-2.amazonaws.com/') === false) {
                 if ($item) {
-                    $item['image'] = str_replace('https://asorural.s3.us-east-2.amazonaws.com/', '', $item['image']);
-                    Storage::disk('s3')->delete($item['image']);
+                    if (strpos($item['image'], 'data:image') === false) {
+                        $pathImage = str_replace('https://asorural.s3.us-east-2.amazonaws.com/', '', $item['image']);
+                        Storage::disk('s3')->delete($item['image']);
+                    }
                 }
                 $base64_str = substr($request->image, strpos($request->image, ",") + 1);
                 $image = base64_decode($base64_str);
